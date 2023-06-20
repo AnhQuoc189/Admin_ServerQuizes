@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-// import User from "../models/Userr.js";
+import User from "../models/User.js";
 import Transaction from "../models/Transaction.js";
 
 export const getAdmins = async (req, res) => {
@@ -27,6 +27,8 @@ export const getUserPerformance = async (req, res) => {
       },
       { $unwind: "$affiliateStats" },
     ]);
+
+    console.log(userWithStats)
 
     const saleTransactions = await Promise.all(
       userWithStats[0].affiliateStats.affiliateSales.map((id) => {

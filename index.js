@@ -11,13 +11,9 @@ import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
 
+
 import errorHandler from "./middleware/errorHandler.js";
 
-import userRoutes from "./routes/userRoutes.js";
-import quizRoutes from "./routes/quizRoutes.js";
-import gameRoutes from "./routes/gameRoutes.js";
-import leaderboardRoutes from "./routes/leaderboardRoutes.js";
-import playerResultRoutes from "./routes/playerResultRoutes.js";
 
 // data imports
 // import User from "./models/User.js";
@@ -53,12 +49,6 @@ app.use("/general", generalRoutes);
 app.use("/management", managementRoutes);
 app.use("/sales", salesRoutes);
 
-// app.use('/api/auth', require('./routes/authRoutes'));
-app.use("/api/users", userRoutes);
-app.use("/api/quizzes", quizRoutes);
-app.use("/api/games", gameRoutes);
-app.use("/api/playerResults", playerResultRoutes);
-app.use("/api/leaderboard", leaderboardRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 9000;

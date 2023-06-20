@@ -5,7 +5,6 @@ import asyncHandler from "express-async-handler";
 import constants from "../constants/httpStatus.js";
 
 export const getUsers = asyncHandler(async (req, res) => {
-  console.log("All");
   try {
     const users = await UserModel.find();
     let newUsers = users.map((user) => {
@@ -28,7 +27,6 @@ export const createUser = asyncHandler(async (req, res) => {
 
   const existUserName = await UserModel.findOne({ userName });
   if (existUserName) {
-    console.log("Ton tai roi");
     return res
       .status(constants.UNPROCESSABLE_ENTITY)
       .json("userName already exists");
